@@ -1,0 +1,16 @@
+{
+  "name": "minecraft-combat-bot",
+  "version": "1.0.0",
+  "description": "Modular Minecraft Combat + Hunting Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.20.1",
+    "mineflayer-pathfinder": "^2.4.4",
+    "mineflayer-pvp": "^1.3.2",
+    "mineflayer-collectblock": "^1.4.1",
+    "prismarine-entity": "^2.3.0"
+  }
+}
