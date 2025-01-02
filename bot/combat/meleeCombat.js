@@ -13,7 +13,15 @@
 const { goals: { GoalFollow, GoalNear } } = require('mineflayer-pathfinder');
 const TargetSelector = require('./targetSelector');
 
-const ATTACK_COOLDOWN_MS = 650;  // ~1 gapless hit per second (slightly under 1.1s)
+// Minecraft 1.9+ weapon recovery periods (ms): Swords = 625ms (1.6s atk speed), Axes = 1000-1250ms (0.8-1.0s)
+const DEFAULT_ATTACK_COOLDOWN_MS = 625;
+const WEAPON_COOLDOWNS_MS = {
+  sword: 625,
+  trident: 909,
+  shovel: 1000,
+  pickaxe: 833,
+  axe: 1250,
+};  // ~1 gapless hit per second (slightly under 1.1s)
 const STRAFE_INTERVAL_MS = 800;
 const REPOSITION_CHANCE  = 0.3;
 
