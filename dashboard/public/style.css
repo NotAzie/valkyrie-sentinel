@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+.hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #58a6ff;
+}
+.pill {
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.pill.online {
+  background: #238636;
+  color: #ffffff;
+}
+.hud-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 20px;
+}
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 16px;
+}
+.card h3 {
+  margin-top: 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #21262d;
+  padding-bottom: 8px;
+  color: #8b949e;
+  text-transform: uppercase;
+}
+canvas {
+  background: #090d13;
+  display: block;
+  border: 1px solid #30363d;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #21262d;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valkyrie Sentinel - Tactical Telemetry Radar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="hud-header">
+      <div class="logo">VALKYRIE // TACTICAL RADAR KERNEL</div>
+      <div id="status-pill" class="pill online">OPERATIONAL</div>
+    </header>
+
+    <div class="hud-grid">
+      <div class="card radar-card">
+        <h3>Spatial 360 Tactical Radar</h3>
+        <canvas id="radarCanvas" width="400" height="400"></canvas>
+      </div>
+
+      <div class="card telemetry-card">
+        <h3>Core Telemetry</h3>
+        <div class="stat-row"><span>State:</span><span id="telemetry-state">COMBAT</span></div>
+        <div class="stat-row"><span>Health:</span><span id="telemetry-health">20.0 / 20.0</span></div>
+        <div class="stat-row"><span>Tick Latency:</span><span id="telemetry-latency">1.14 ms</span></div>
+        <div class="stat-row"><span>Active Targets:</span><span id="telemetry-targets">3</span></div>
+        <div class="stat-row"><span>Target Lock:</span><span id="telemetry-lock">Zombie [ID: 104]</span></div>
+      </div>
+    </div>
+  </div>
+  <script src="radar.js"></script>
+</body>
+</html>
