@@ -1,16 +1,34 @@
 {
-  "name": "minecraft-combat-bot",
-  "version": "1.0.0",
-  "description": "Modular Minecraft Combat + Hunting Bot",
-  "main": "index.js",
+  "name": "valkyrie-sentinel",
+  "version": "2.0.0",
+  "description": "Autonomous Spatial Combat Intelligence, Real-Time Kinematic Trajectory Prediction, Multi-Agent Swarm Arbitration, and Zero-Latency Behavioral Engine",
+  "main": "dist/index.js",
+  "bin": {
+    "valkyrie": "./bin/valkyrie"
+  },
   "scripts": {
-    "start": "node index.js"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "mineflayer": "^4.20.1",
     "mineflayer-pathfinder": "^2.4.4",
     "mineflayer-pvp": "^1.3.2",
     "mineflayer-collectblock": "^1.4.1",
-    "prismarine-entity": "^2.3.0"
-  }
+    "prismarine-entity": "^2.3.0",
+    "vec3": "^0.1.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.11.0",
+    "vitest": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "Apache-2.0"
 }
