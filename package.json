@@ -1,8 +1,9 @@
 {
   "name": "valkyrie-sentinel",
-  "version": "2.0.0",
-  "description": "Autonomous Spatial Combat Intelligence, Real-Time Kinematic Trajectory Prediction, Multi-Agent Swarm Arbitration, and Zero-Latency Behavioral Engine",
-  "main": "dist/index.js",
+  "version": "3.0.0",
+  "description": "Autonomous Spatial Combat Intelligence, Causal Horizon Inversion, 64-Bit Morton Bitboard Lattice, and Continuous Eikonal Geodesic Navigation",
+  "main": "dist/valkyrie.js",
+  "types": "dist/valkyrie.d.ts",
   "bin": {
     "valkyrie": "./bin/valkyrie"
   },
@@ -11,6 +12,7 @@
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "test": "vitest run",
+    "benchmark": "vitest run tests/nextgen.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
