@@ -1,9 +1,9 @@
 {
   "name": "valkyrie-sentinel",
-  "version": "3.0.0",
-  "description": "Autonomous Spatial Combat Intelligence, Causal Horizon Inversion, 64-Bit Morton Bitboard Lattice, and Continuous Eikonal Geodesic Navigation",
-  "main": "dist/valkyrie.js",
-  "types": "dist/valkyrie.d.ts",
+  "version": "4.0.0",
+  "description": "Autonomous Spatial Intelligence, Causal Horizon Inversion, 64-Bit Morton Bitboards, ReAct Cognitive Reasoning Mesh, and Open Spatial Protocol (VSP/1.0) Foundation SDK",
+  "main": "dist/sdk/index.js",
+  "types": "dist/sdk/index.d.ts",
   "bin": {
     "valkyrie": "./bin/valkyrie"
   },
