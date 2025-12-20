@@ -1,0 +1,23 @@
+{
+  "system": {
+    "engine": "valkyrie-v1",
+    "protocolVersion": "1.0.0",
+    "tickRateHz": 20,
+    "maxTickBudgetMs": 50.0
+  },
+  "kinematics": {
+    "reachThreshold": 3.0000,
+    "gravity": 0.05,
+    "drag": 0.01,
+    "criticalFallVelocity": -0.08
+  },
+  "lattice": {
+    "wordCapacity": 65536,
+    "maxDepth": 8
+  },
+  "telemetry": {
+    "httpPort": 3000,
+    "metricsPort": 9090,
+    "logLevel": "INFO"
+  }
+}
