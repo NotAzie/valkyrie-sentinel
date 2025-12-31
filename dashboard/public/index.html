@@ -2,29 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Valkyrie Sentinel - Tactical Telemetry Radar</title>
+  <title>Valkyrie Sentinel // Tactical Radar HUD</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
     <header class="hud-header">
-      <div class="logo">VALKYRIE // TACTICAL RADAR KERNEL</div>
-      <div id="status-pill" class="pill online">OPERATIONAL</div>
+      <div class="header-left">
+        <span class="logo">VALKYRIE SENTINEL</span>
+        <span class="sub-logo">// AUTONOMOUS TACTICAL KERNEL V1.0.0</span>
+      </div>
+      <div class="header-right">
+        <div id="status-pill" class="pill online">OPERATIONAL</div>
+        <div class="clock" id="hud-clock">00:00:00 UTC</div>
+      </div>
     </header>
 
     <div class="hud-grid">
+      <!-- 360 Tactical Radar Canvas -->
       <div class="card radar-card">
-        <h3>Spatial 360 Tactical Radar</h3>
-        <canvas id="radarCanvas" width="400" height="400"></canvas>
+        <div class="card-header">
+          <h3>360-Degree Continuous Spatial Radar</h3>
+          <span class="badge">RANGE: 50m</span>
+        </div>
+        <canvas id="radarCanvas" width="450" height="450"></canvas>
+        <div class="radar-legend">
+          <span class="legend-item"><span class="dot bot"></span> SELF</span>
+          <span class="legend-item"><span class="dot target"></span> PRIMARY TARGET</span>
+          <span class="legend-item"><span class="dot hostile"></span> HOSTILE</span>
+          <span class="legend-item"><span class="dot ally"></span> ALLY</span>
+          <span class="legend-item"><span class="dot chi"></span> CHI REACH CONE</span>
+        </div>
       </div>
 
+      <!-- Live Telemetry Stream -->
       <div class="card telemetry-card">
-        <h3>Core Telemetry</h3>
-        <div class="stat-row"><span>State:</span><span id="telemetry-state">COMBAT</span></div>
-        <div class="stat-row"><span>Health:</span><span id="telemetry-health">20.0 / 20.0</span></div>
-        <div class="stat-row"><span>Tick Latency:</span><span id="telemetry-latency">1.14 ms</span></div>
-        <div class="stat-row"><span>Active Targets:</span><span id="telemetry-targets">3</span></div>
-        <div class="stat-row"><span>Target Lock:</span><span id="telemetry-lock">Zombie [ID: 104]</span></div>
+        <div class="card-header">
+          <h3>Core Telemetry Metrics</h3>
+          <span class="badge green">20 HZ TICK</span>
+        </div>
+
+        <div class="telemetry-section">
+          <div class="stat-row">
+            <span class="label">Behavioral State:</span>
+            <span class="val highlight" id="telemetry-state">STANDBY</span>
+          </div>
+          <div class="stat-row">
+            <span class="label">Primary Target Lock:</span>
+            <span class="val" id="telemetry-lock">NONE</span>
+          </div>
+          <div class="stat-row">
+            <span class="label">Active Threats in Range:</span>
+            <span class="val" id="telemetry-targets">0</span>
+          </div>
+          <div class="stat-row">
+            <span class="label">Decision Cycle Latency:</span>
+            <span class="val highlight" id="telemetry-latency">0.00 ms</span>
+          </div>
+        </div>
+
+        <div class="card-header sub">
+          <h3>Kinematic Health Invariant</h3>
+        </div>
+        <div class="health-container">
+          <div class="health-bar-bg">
+            <div id="health-bar-fill" class="health-bar-fill" style="width: 100%;"></div>
+          </div>
+          <div class="health-text" id="telemetry-health">20.0 / 20.0 HP</div>
+        </div>
+
+        <div class="card-header sub">
+          <h3>System Invariants</h3>
+        </div>
+        <ul class="invariants-list">
+          <li><strong>Causal Horizon Inversion:</strong> <span class="green-text">ENGAGED (3.0000m)</span></li>
+          <li><strong>Flat Memory Arena:</strong> <span class="green-text">16MB PRE-ALLOCATED (0 GC)</span></li>
+          <li><strong>Morton Bitboard Lattice:</strong> <span class="green-text">O(1) MASKING ACTIVE</span></li>
+          <li><strong>Continuous Geodesics:</strong> <span class="green-text">EIKONAL FIELD CONVERGED</span></li>
+        </ul>
       </div>
     </div>
   </div>

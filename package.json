@@ -1,18 +1,19 @@
 {
   "name": "valkyrie-sentinel",
-  "version": "4.0.0",
-  "description": "Autonomous Spatial Intelligence, Causal Horizon Inversion, 64-Bit Morton Bitboards, ReAct Cognitive Reasoning Mesh, and Open Spatial Protocol (VSP/1.0) Foundation SDK",
-  "main": "dist/sdk/index.js",
-  "types": "dist/sdk/index.d.ts",
+  "version": "1.0.0",
+  "description": "Autonomous Spatial Foundation Engine, Causal Horizon Inversion, ReAct Cognitive Reasoning Mesh, and Open Spatial Protocol (VSP/1.0)",
+  "main": "dist/valkyrie.js",
+  "types": "dist/valkyrie.d.ts",
   "bin": {
     "valkyrie": "./bin/valkyrie"
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts",
+    "start": "node dist/launcher.js",
+    "dev": "ts-node src/launcher.ts",
+    "simulate": "ts-node scripts/simulate.ts",
     "test": "vitest run",
-    "benchmark": "vitest run tests/nextgen.test.ts",
+    "benchmark": "ts-node scripts/benchmark.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

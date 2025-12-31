@@ -1,0 +1,67 @@
+#!/usr/bin/env node
+const { spawn } = require('child_process');
+const path = require('path');
+
+const command = process.argv[2] || 'help';
+
+console.log('================================================================================');
+console.log('VALKYRIE SENTINEL CLI // OPEN SPATIAL FOUNDATION PROTOCOL (VSP/1.0)');
+console.log('Version: 1.0.0-RELEASE | Architecture: Continuous Geodesic Manifold Kernel');
+console.log('================================================================================');
+
+switch (command) {
+  case 'start': {
+    console.log('[CLI] Booting Valkyrie Sentinel live autonomous agent...');
+    const launcher = path.resolve(__dirname, '../dist/launcher.js');
+    const proc = spawn('node', [`"${launcher}"`], { stdio: 'inherit', shell: true });
+    proc.on('exit', (code) => process.exit(code || 0));
+    break;
+  }
+
+  case 'simulate': {
+    console.log('[CLI] Launching Headless Battle Arena Simulation...');
+    const script = path.resolve(__dirname, '../scripts/simulate.ts');
+    const proc = spawn('npx', ['ts-node', `"${script}"`], { stdio: 'inherit', shell: true });
+    proc.on('exit', (code) => process.exit(code || 0));
+    break;
+  }
+
+  case 'benchmark': {
+    console.log('[CLI] Running Decision Cycle Microsecond Benchmark...');
+    const script = path.resolve(__dirname, '../scripts/benchmark.ts');
+    const proc = spawn('npx', ['ts-node', `"${script}"`], { stdio: 'inherit', shell: true });
+    proc.on('exit', (code) => process.exit(code || 0));
+    break;
+  }
+
+  case 'test': {
+    console.log('[CLI] Executing Vitest Verification Matrix...');
+    const proc = spawn('npx', ['vitest', 'run'], { stdio: 'inherit', shell: true });
+    proc.on('exit', (code) => process.exit(code || 0));
+    break;
+  }
+
+  case 'version':
+  case '-v':
+  case '--version': {
+    console.log('v1.0.0');
+    break;
+  }
+
+  case 'help':
+  default: {
+    console.log(`
+Usage:
+  valkyrie <command> [options]
+
+Commands:
+  start       Boot live client connecting to Minecraft server (reads MC_HOST, MC_PORT)
+  simulate    Launch headless battle arena simulation and open web radar at http://localhost:3000
+  benchmark   Run 50,000-iteration decision cycle latency benchmark
+  test        Execute Vitest unit and integration test matrix
+  version     Display engine release version
+  help        Show this clinical command reference
+`);
+    break;
+  }
+}
